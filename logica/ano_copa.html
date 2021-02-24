@@ -1,0 +1,31 @@
+<Meta charset="UTF-8">
+
+<script>
+
+	function pulalinha (){
+
+		document.write("<br><br>");
+
+	}
+
+	function mostra(frase){
+
+		document.write(frase);
+		pulalinha();
+	}
+	var limite = parseInt(prompt("Qual e o ano limite?"));
+	var anoCopa = 1930;
+	var anoAtual = 2020
+	 
+	 while(anoCopa <= limite ) {
+		
+		mostra("Teve copa em " + anoCopa );
+		anoCopa = anoCopa + 4;
+
+		
+	}
+
+
+	mostra("Esse foram os anos de copa ate " + limite);
+
+</script>

@@ -1,0 +1,23 @@
+<Meta charset="UTF-8">
+
+<script>
+
+function pulaLinha(){
+
+	document.write("<br><br><br>");
+}
+
+function mostra(frase){
+
+	document.write(frase);
+	pulaLinha();
+}
+
+var nome = prompt("Informe seu nome!");
+var cidade = prompt("Informe sua cidade!");
+var km = prompt(nome + " Informe a quilometragem!");
+var preçokm = km * 2 * 1.50;
+mostra(nome + " seu frete até " + cidade + " saira em " + preçokm + "reais") ;
+mostra("<h1> Obrigado pela preferencia! </h1>");
+
+</script>	

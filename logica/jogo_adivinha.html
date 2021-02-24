@@ -1,0 +1,35 @@
+<Meta charset="UTF-8">
+
+<script>
+
+	function pulalinha (){
+
+		document.write("<br>");
+
+	}
+
+	function mostra(frase){
+		
+		document.write(frase);
+		pulalinha();
+	}
+var numeroPensado = 5
+var tentativas = 1;
+
+while(tentativas <= 3){
+	var chute = parseInt(prompt("digite seu chute!"));
+	if(chute == numeroPensado){
+		mostra("Parabens, você ACERTOU! O numero pensado foi, " + numeroPensado);
+		break;
+	}else{
+		mostra("Você ERROU");
+	}
+	tentativas++;
+}
+
+mostra("FIM")
+
+
+
+
+</script>
