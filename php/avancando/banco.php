@@ -1,22 +1,12 @@
 <?php   
 
-function exibeMensagem($mensagem){
-    echo $mensagem, '<br>';
-}
 
-function sacar($conta, $valorASacar)
-{
-    if ($valorASacar > $conta['saldo']) {
-        exibeMensagem("Você não pode sacar este valor");
-    } else {
-        $conta['saldo'] -= $valorASacar;
-    }
-}   
+include 'funcdoes.php';
 
 $contasCorrentes = [
    '123.456.789-98' => [
         'titular'=> 'Ronaldo',
-       'saldo'=>1000
+       'saldo'=>1000 
    ],
    '138.765.431-23' => [
        'titular'=> 'Vitor',
@@ -24,18 +14,27 @@ $contasCorrentes = [
    ],
    '287.654.323-45' => [
        'titular'=> 'Arthur',
-       'saldo'=>300
+       'saldo'=>300 
     ]
 ];  
 
-$saque = 500;
+$dinheiro = 400;
 
 
+$contasCorrentes['123.456.789-98'] = 
+depositar($contasCorrentes['123.456.789-98'], 
+$dinheiro);
 
-$contasCorrentes['123.456.789-98'] = sacar($contasCorrentes['123.456.789-98'], $saque);
+$contasCorrentes['138.765.431-23'] = 
+depositar($contasCorrentes['138.765.431-23'], 
+$dinheiro);
+
+$contasCorrentes['287.654.323-45'] = 
+depositar($contasCorrentes['287.654.323-45'],
+ $dinheiro);
 
 
 
 foreach($contasCorrentes as $cpf=> $conta){
-    exibeMensagem("certification of physical person $cpf. -NAME " . $conta['titular'], '<br><br>');
-};
+    exibeMensagem("CPF $cpf. -NOME   . {$conta['titular']} <br> SALDO {$conta['saldo']} <br><br>");
+}
