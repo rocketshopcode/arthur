@@ -36,11 +36,22 @@ depositar($contasCorrentes['287.654.323-45'],
 
 titularComLetraMaiuscula($contasCorrentes['287.654.323-45']);
 
-unset($contasCorrentes['138.765.431-23']);
 
 
-
-foreach($contasCorrentes as $cpf=> $conta){
+/*foreach($contasCorrentes as $cpf=> $conta){
     ['titular' => $titular, 'saldo' => $saldo ] = $conta;
-    exibeMensagem("CPF $cpf. -NOME   $titular <br> SALDO $saldo<br><br>");
-}
+    exibeConta("CPF $cpf. -NOME   $titular <br> SALDO $saldo<br><br>");
+}*/
+?>
+<body>
+    <h1>Contas correntes</h1>
+
+    <dl>
+        <?php foreach($contasCorrentes as $cpf => $conta) { ?>
+        <dt>
+            <h3><?= $conta['titular']; ?> - <?= $cpf; ?></h3>
+        </dt>
+        <dd>Saldo: <?= $conta['saldo']; ?></dd>
+        <?php } ?>
+    </dl>
+</body>
