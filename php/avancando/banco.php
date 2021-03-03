@@ -1,7 +1,8 @@
 <?php   
 
 
-include 'funcdoes.php';
+require_once 'funcoes.php';
+require_once 'funcoes.php';
 
 $contasCorrentes = [
    '123.456.789-98' => [
@@ -31,10 +32,13 @@ $dinheiro);
 
 $contasCorrentes['287.654.323-45'] = 
 depositar($contasCorrentes['287.654.323-45'],
- $dinheiro);
+$dinheiro);
+
+titularComLetraMaiuscula($contasCorrentes['287.654.323-45']);
 
 
 
 foreach($contasCorrentes as $cpf=> $conta){
+    list( 'titular' => $titular,  );
     exibeMensagem("CPF $cpf. -NOME   . {$conta['titular']} <br> SALDO {$conta['saldo']} <br><br>");
 }
