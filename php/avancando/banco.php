@@ -23,22 +23,24 @@ $dinheiro = 400;
 
 
 $contasCorrentes['123.456.789-98'] = 
-depositar($contasCorrentes['123.456.789-98'], 
+sacar($contasCorrentes['123.456.789-98'], 
 $dinheiro);
 
 $contasCorrentes['138.765.431-23'] = 
-depositar($contasCorrentes['138.765.431-23'], 
+sacar($contasCorrentes['138.765.431-23'], 
 $dinheiro);
 
 $contasCorrentes['287.654.323-45'] = 
 depositar($contasCorrentes['287.654.323-45'],
-$dinheiro);
+ $dinheiro);
 
 titularComLetraMaiuscula($contasCorrentes['287.654.323-45']);
+
+unset($contasCorrentes['138.765.431-23']);
 
 
 
 foreach($contasCorrentes as $cpf=> $conta){
-    list( 'titular' => $titular,  );
-    exibeMensagem("CPF $cpf. -NOME   . {$conta['titular']} <br> SALDO {$conta['saldo']} <br><br>");
+    ['titular' => $titular, 'saldo' => $saldo ] = $conta;
+    exibeMensagem("CPF $cpf. -NOME   $titular <br> SALDO $saldo<br><br>");
 }

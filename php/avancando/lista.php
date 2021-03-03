@@ -2,7 +2,11 @@
 
 $idadeList = [24, 31, 15, 19, 27, 36]; 
 
-$umaIdade = $idadeList[4];
+list($idadeRonaldo, , $idadeArthur) = $idadeList;
 
-echo $umaIdade;
-//echo "$idedesLista";
+
+$idadeList[] = 20;
+
+foreach($idadeList as $idade){
+    echo $idade,'<br>';
+}
