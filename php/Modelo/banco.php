@@ -1,19 +1,12 @@
 <?php   
 
-spl_autoload_register(function (string $nomeCompletoDaClasse){
-    //Alura\Banco\modelo\Endereco
-    //php/avancando/modelo/endereco.php
-    $caminhoArquivo = str_replace('Alura\\Banco', 'php', $nomeCompletoDaClasse);
-    $caminhoArquivo = str_replace('\\', DIRECTORY_SEPARATOR, $nomeCompletoDaClasse);
-    
-    echo $nomeCompletoDaClasse;
-    exit();
-});
+require_once 'autoload.php';
 
 use Alura\Banco\Modelo\Conta\Titular;
 use Alura\Banco\Modelo\Endereco;
 use Alura\Banco\Modelo\CPF;
-use Alura\Banco\Modelo\Conta\conta;
+use Alura\Banco\Modelo\Conta\Conta;
+
 
 $endereco = new Endereco('general salgado', 'meu bairro', ' minha rua', '147');    
 $arthur = new Titular(new CPF('123.456.789-10'), 'Arthur', $endereco);
@@ -26,7 +19,7 @@ echo $primeiraConta->recuperaSaldo();
 
 //$primeiraConta->validaNomeTitular();
 $vitoria = new Titular(new CPF('321.654.987-30'), 'Vitoria', $endereco);
-$segundaConta = new conta($Vitoria);
+$segundaConta = new Conta($Vitoria);
 var_dump($segundaConta);
 
 echo Conta::$recuperaNumeroDeConta; 

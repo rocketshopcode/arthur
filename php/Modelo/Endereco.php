@@ -9,7 +9,6 @@ class Endereco{
     private string $rua; 
     private string $numero;
 
-
     public function __construct(string $cidade, string $bairro, string $rua, string $numero ){
         $this->bairro = $bairro;
         $this->rua = $rua
@@ -29,16 +28,8 @@ class Endereco{
         return $this->bairro;
     }
 
-
     public function recuperarua():string{
         return $this->rua;
     }
-
-
-
-
-
-
-
 
 }
