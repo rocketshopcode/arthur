@@ -20,10 +20,16 @@ class Pessoa{
         return $this->cpf->recuperaNumero();
     }
 
-    protected function validaNomeTitular(string $nomeTitular){
+    final protected function validaNome(string $nomeTitular){
         if(strlen($nomeTitular) < 5){
             echo "Nome precisa ter no minimo 5 caracteres";
             exit;
         }
+    }
+    
+    public function __get(string $nomeAtributo){
+        $metodo = 'recupera' . ucfirst($nomeAtributo); 
+        echo $nomeAtributo;
+        exit();
     }
 }
