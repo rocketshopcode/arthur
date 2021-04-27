@@ -2,7 +2,7 @@
 
 class Calculadora{
 
-    public function calculaMedia(array $notas){
+    public function calculaMedia(array $notas): ?float{
 
         $quantidadeNotas = sizeof($notas);
         if($quantidadeNotas > 0){
@@ -15,7 +15,7 @@ class Calculadora{
 
             return $media;
         }else{
-            echo "<p>Não foi possivel calcular a média</p>";
+           return null;
         }
     }
 }
