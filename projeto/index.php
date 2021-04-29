@@ -1,6 +1,12 @@
 <?php
 
-require 'ArrayUtils.php';
+namespace Alura;
+
+spl_autoload_register(
+    function(string $namespaceclass): void{
+        
+    }
+);
 
 $correntistas_e_compras = [
     "Gionanni",
