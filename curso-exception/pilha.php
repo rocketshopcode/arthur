@@ -4,22 +4,32 @@ function funcao1(){
     echo 'Entrei na função 1<br>';
     try{
         funcao2();
-        //$arrayFixo = new SplFixedArray(2);
-        //$arrayFixo[0] = 'valor';
-    } catch(RuntimeException $problema) {
-        echo "Na função 1, eu resolvi o problema da função 2<br>";
-    } catch(DivisionByZeroError)
-        //$divisao = itdiv(5, 0);
-    //funcao2();
+    } catch(throwable $problema) {
+        echo $problema->getMessage();
+        echo "<br>";
+        echo $problema->getLine();
+        echo "<br>";
+        echo $problema->getTraceAsString();
+        echo "<br>";
+    }
+    
     echo 'Saindo da função 1<br>';
 }
 
 function funcao2(){
+
     echo 'Entrei na função 2<br>';
+
+    throw new RuntimeException();
+
+   /* $divisao = intdiv(5, 0);
+    $arrayFixo = new SplFixedArray(2);
+    $arrayFixo[3] = 'valor';
+
     for ($i = 1; $i <= 5; $i++){
         echo "$i <br>";
         
-    }
+    }*/
     echo 'Saindo da função 2<br>';
 }
 
